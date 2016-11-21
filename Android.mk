@@ -27,6 +27,7 @@ zlib_cflags := -O3 -DUSE_MMAP -DZLIB_CONST
 LOCAL_MODULE := libz
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += $(zlib_cflags)
+LOCAL_SDCLANG_LTO := true
 
 # TODO: This is to work around b/24465209. Remove after root cause is fixed
 LOCAL_LDFLAGS_arm := -Wl,--hash-style=both
@@ -46,6 +47,7 @@ LOCAL_ARM_MODE := arm
 LOCAL_MODULE := libz
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += $(zlib_cflags)
+LOCAL_SDCLANG_LTO := true
 LOCAL_SRC_FILES := $(zlib_files)
 ifneq ($(TARGET_BUILD_APPS),)
   LOCAL_SDK_VERSION := 9
