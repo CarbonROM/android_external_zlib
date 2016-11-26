@@ -282,7 +282,7 @@ int ZEXPORT deflateInit2_(strm, level, method, windowBits, memLevel, strategy,
 #ifdef FASTEST
     if (level != 0) level = 1;
 #else
-    if (level == Z_DEFAULT_COMPRESSION) level = 6;
+    if (level == Z_DEFAULT_COMPRESSION) level = 3;
 #endif
 
     if (windowBits < 0) { /* suppress zlib wrapper */
@@ -579,7 +579,7 @@ int ZEXPORT deflateParams(strm, level, strategy)
 #ifdef FASTEST
     if (level != 0) level = 1;
 #else
-    if (level == Z_DEFAULT_COMPRESSION) level = 6;
+    if (level == Z_DEFAULT_COMPRESSION) level = 3;
 #endif
     if (level < 0 || level > 9 || strategy < 0 || strategy > Z_FIXED) {
         return Z_STREAM_ERROR;
