@@ -6,6 +6,9 @@
 /* @(#) $Id$ */
 
 #include "zutil.h"
+#ifdef ARMv8
+#  include "neon_adler32.h"
+#endif
 
 local uLong adler32_combine_ OF((uLong adler1, uLong adler2, z_off64_t len2));
 
@@ -136,7 +139,12 @@ uLong ZEXPORT adler32(adler, buf, len)
     const Bytef *buf;
     uInt len;
 {
+#ifdef ARMv8
+#  pragma message("Using NEON-ized Adler32.")
+    return NEON_adler32(adler, buf, len);
+#else
     return adler32_z(adler, buf, len);
+#endif
 }
 
 /* ========================================================================= */
