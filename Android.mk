@@ -22,6 +22,10 @@ zlib_files := \
 	src/uncompr.c \
 	src/zutil.c
 
+zlib_files_arm64 := \
+	contrib/arm/neon_adler32.c \
+	contrib/arm/armv8_crc32.c
+
 zlib_cflags := -O3 -DUSE_MMAP -DZLIB_CONST -DUNALIGNED_OK
 
 LOCAL_MODULE := libz
@@ -34,7 +38,7 @@ LOCAL_SDCLANG_LTO := true
 LOCAL_LDFLAGS_arm := -Wl,--hash-style=both
 
 LOCAL_SRC_FILES := $(zlib_files)
-LOCAL_SRC_FILES_arm64 := contrib/arm/neon_adler32.c
+LOCAL_SRC_FILES_arm64 := $(zlib_files_arm64)
 ifneq ($(TARGET_BUILD_APPS),)
   LOCAL_SDK_VERSION := 9
 else
@@ -52,7 +56,7 @@ LOCAL_CFLAGS += $(zlib_cflags)
 LOCAL_CFLAGS_arm64 += -DARMv8
 LOCAL_SDCLANG_LTO := true
 LOCAL_SRC_FILES := $(zlib_files)
-LOCAL_SRC_FILES_arm64 := contrib/arm/neon_adler32.c
+LOCAL_SRC_FILES_arm64 := $(zlib_files_arm64)
 ifneq ($(TARGET_BUILD_APPS),)
   LOCAL_SDK_VERSION := 9
 else
