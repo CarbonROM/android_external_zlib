@@ -29,6 +29,9 @@
 #endif /* MAKECRCH */
 
 #include "zutil.h"      /* for STDC and FAR definitions */
+#ifdef ARMv8CRC
+#  include "armv8_crc32.h"      /* for ARMv8 optimized crc32 functions */
+#endif
 
 /* Definitions for doing the crc four data bytes at a time. */
 #if !defined(NOBYFOUR) && defined(Z_U4)
@@ -297,7 +300,12 @@ unsigned long ZEXPORT crc32(crc, buf, len)
     const unsigned char FAR *buf;
     uInt len;
 {
+#ifdef ARMv8CRC
+#  pragma message("Using ARMv8 CRC32 instruction.")
+    return armv8_crc32_little(crc, buf, len);
+#else
     return crc32_func(crc, buf, len);
+#endif
 }
 
 #ifdef BYFOUR
