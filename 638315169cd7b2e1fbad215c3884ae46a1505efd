@@ -1,4 +1,28 @@
 {
   "pushCert": "certificate version 0.1\npusher C249223A 1500649178 -0500\npushee ssh://review.carbonrom.org:29418/CarbonROM/android_external_zlib\nnonce 1500649799-DD9967BAE7DEFDE462BF036D666C7C165F908987\n\n0000000000000000000000000000000000000000 7ad0277b6442577a7c0ad64bb1d7d4c4e148922c refs/for/cr-5.1%topic\u003dzlib\n-----BEGIN PGP SIGNATURE-----\n\niQEcBAABAgAGBQJZchbaAAoJEJ8pB5zCSSI64BwIANKcaC2UNOEotRpQdn7Y+gg2\ntE4X4PPoiFIYzc9SJ1Vv3M3atVxqdBHezfqesfCNOCj2oOzj9tLtEjT9PeVDjtmS\nszUUc1YyfFCu+JVSyjqeZayM9xQRKp05p+Gsq6eyymhu0XcXkwoBDS8HyFUA1X+1\neTZ2jpuIsvndZQeVCVHDZmm4jTHe84+I6XZ9HdYszGBrqsDgOwXWFIQK8Ixcte1y\njRD2bthCoNmwfJLnfYoGajOwamVGNjd7UlF37GWBc6W8UczeK9O/ChC19mA6+YWn\nLaAhpr5Vv3+lrm77OYdjpn0r6EGjMFRvjKroxNzdEv7Fj06k40BeFf23VRJtF80\u003d\n\u003df7nv\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0e1d27_e0f19396",
+        "filename": "neon_adler32.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-21T17:17:38Z",
+      "side": 1,
+      "message": "Need to remove this. It\u0027s fine to test, but this needs to be fixed before merging",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 6
+      },
+      "revId": "638315169cd7b2e1fbad215c3884ae46a1505efd",
+      "serverId": "4c0b52a2-b090-4331-a190-b288d812d081",
+      "unresolved": false
+    }
+  ]
 }
