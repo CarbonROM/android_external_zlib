@@ -27,7 +27,7 @@ zlib_cflags := -O3 -DUSE_MMAP -DZLIB_CONST -DUNALIGNED_OK
 LOCAL_MODULE := libz
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += $(zlib_cflags)
-LOCAL_CFLAGS_arm64 := -DARMv8 -DARMv8CRC
+LOCAL_CFLAGS_arm64 := -march=armv8-a+crc -DARMv8 -DARMv8CRC
 LOCAL_SDCLANG_LTO := true
 # TODO: This is to work around b/24465209. Remove after root cause is fixed
 LOCAL_LDFLAGS_arm := -Wl,--hash-style=both
